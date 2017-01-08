@@ -11,7 +11,7 @@ public class Sort_Number_Demo {
         numberList.add(Integer.valueOf(1992));
         numberList.add(Integer.valueOf(1990));
         numberList.add(2014);
-        //Collections.sort(numberList);
+        Collections.sort(numberList);
         Iterator itr = numberList.iterator();
         while(itr.hasNext()){
             System.out.println(itr.next());
