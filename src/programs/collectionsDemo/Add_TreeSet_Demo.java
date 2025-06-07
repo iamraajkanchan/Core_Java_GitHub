@@ -24,16 +24,12 @@ public static void main(String args[]){
         nameList2.add("Jugal");
     
         System.out.println("Displaying name list in ascending order having unique values");
-        nameList.forEach((String nameDisp) -> (
-                System.out.println(nameDisp)
-                ));
+        nameList.forEach((String nameDisp) -> System.out.println(nameDisp));
         System.out.println("");
         System.out.println("");
         System.out.println("");
         
         System.out.println("Displaying name list in ascending order having duplicate values");
-        nameList2.forEach((String nameDisp) -> (
-                System.out.println(nameDisp)
-                ));
+        nameList2.forEach((String nameDisp) -> System.out.println(nameDisp));
     }
 }

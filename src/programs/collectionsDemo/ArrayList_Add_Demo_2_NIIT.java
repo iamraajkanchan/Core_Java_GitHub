@@ -9,9 +9,9 @@ public class ArrayList_Add_Demo_2_NIIT
     public static void main(String[] args) 
     {
       List<Integer> partList=new ArrayList<>(3);
-        partList.add(new Integer(1111));
-        partList.add(new Integer(2222));
-        partList.add(new Integer(3333));
+        partList.add(1111);
+        partList.add(2222);
+        partList.add(3333);
       //partList.add("Oops a string! ");
       
       /*

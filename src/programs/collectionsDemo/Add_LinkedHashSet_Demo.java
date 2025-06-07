@@ -24,16 +24,12 @@ public class Add_LinkedHashSet_Demo {
         nameList2.add("Jugal");
     
         System.out.println("Displaying Name List having Unique Values");
-        nameList.forEach((String nameDisp) -> (
-                System.out.println(nameDisp)
-                ));
+        nameList.forEach((String nameDisp) -> System.out.println(nameDisp));
         System.out.println("");
         System.out.println("");
         System.out.println("");
         
         System.out.println("Displaying Name List having Duplicate Values");
-        nameList2.forEach((String nameDisp) -> (
-                System.out.println(nameDisp)
-                ));
+        nameList2.forEach((String nameDisp) -> System.out.println(nameDisp));
     }
 }

@@ -2,7 +2,7 @@ package programs.patterns.memento;
 
 
 /**
- * The memento pattern is used to save and restore the state of an object without violating encapsulation.
+ * The memento behavioral design pattern is used to save and restore the state of an object without violating encapsulation.
  * It is especially useful when an object's state can change frequently, and you need a way to revert back to
  * a previous state, like in undo/redo functionality.
  * */

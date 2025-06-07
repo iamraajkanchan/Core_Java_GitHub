@@ -1,5 +1,6 @@
 package programs.dsa;
-import org.myProgram.utility.Utility;
+
+import programs.utility.Utility;
 
 /**
  * 1. Basic Operations

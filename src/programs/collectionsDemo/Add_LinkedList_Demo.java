@@ -11,8 +11,6 @@ public class Add_LinkedList_Demo {
         nameList.add("Jugal");
         nameList.add("Joswin");
         
-        nameList.forEach((String nameDisp) -> (
-                System.out.println(nameDisp))
-                );
+        nameList.forEach((String nameDisp) -> System.out.println(nameDisp));
     }
 }

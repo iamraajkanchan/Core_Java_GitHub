@@ -1,5 +1,6 @@
 import programs.dsa.BasicArrayExample;
 import programs.dsa.DSAArrayExample;
+import programs.patterns.adapter.AudioPlayer;
 import programs.patterns.memento.EditorHistory;
 import programs.patterns.memento.EditorHistoryFromAI;
 import programs.patterns.memento.TextEditor;
@@ -10,8 +11,8 @@ public class Main {
         // simulateBasicArrayExamples();
         // simulateDSAArrayExamples();
         // simulateMementoExample();
-
-        simulateMementoExampleFromAI();
+        // simulateMementoExampleFromAI();
+        simulateAdapterDemoExample();
     }
 
     public static void simulateBasicArrayExamples() {
@@ -77,5 +78,12 @@ public class Main {
         // Undo again (should restore "")
         history.undo(editor);
         Utility.printToLogcat(Main.class, Thread.currentThread().getStackTrace().length >= 2 ? Thread.currentThread().getStackTrace()[2] : null, "After 2nd Undo : " + editor.getContent());
+    }
+
+    private static void simulateAdapterDemoExample() {
+        AudioPlayer player = new AudioPlayer();
+        player.play("mp3", "song.mp3");  // Direct play without adapter
+        player.play("mp4", "movie.mp4"); // Uses MP4 adapter
+        player.play("vlc", "video.vlc"); // Uses VLC adapter
     }
 }

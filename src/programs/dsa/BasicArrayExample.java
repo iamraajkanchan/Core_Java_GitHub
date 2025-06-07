@@ -1,5 +1,5 @@
 package programs.dsa;
-import org.myProgram.utility.Utility;
+import programs.utility.Utility;
 
 public class BasicArrayExample {
     public Integer[] evenNumbers = {2, 4, 6, 8, 10};
