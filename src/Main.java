@@ -131,6 +131,7 @@ public class Main {
     private static void simulateDecoratorPatternExample() {
         DecoratorFarmHousePizza farmHousePizza = new DecoratorFarmHousePizza();
         System.out.println("FarmHouse Pizza Cost before updating : " + Utility.printDoubleAmountWithRupeeSymbol(farmHousePizza.getPizzaCost()));
+        farmHousePizza.updateBaseCost(50);
         farmHousePizza.updateCost(30);
         System.out.println("FarmHouse Pizza Cost after updating : " + Utility.printDoubleAmountWithRupeeSymbol(farmHousePizza.getPizzaCost()));
     }

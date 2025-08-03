@@ -10,14 +10,15 @@ public class DecoratorFarmHousePizza extends DecoratorBasePizza {
 
     @Override
     public void updateCost(double newCost) {
-        pizzaCost = super.baseCost + newCost;
+        this.pizzaCost = super.baseCost + newCost;
     }
 
     public double getPizzaCost() {
-        return pizzaCost;
+        return this.pizzaCost;
     }
 
     public void updateBaseCost(double updatedCost) {
         super.baseCost = updatedCost;
+        this.pizzaCost = updatedCost;
     }
 }
