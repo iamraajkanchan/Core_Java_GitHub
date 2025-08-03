@@ -1,6 +1,9 @@
 import programs.dsa.BasicArrayExample;
 import programs.dsa.DSAArrayExample;
+import programs.multithreading.basics.MyBasicThread;
+import programs.multithreading.basics.TestCounter;
 import programs.patterns.adapter.AudioPlayer;
+import programs.patterns.decorator.DecoratorFarmHousePizza;
 import programs.patterns.memento.EditorHistory;
 import programs.patterns.memento.EditorHistoryFromAI;
 import programs.patterns.memento.TextEditor;
@@ -12,7 +15,8 @@ public class Main {
         // simulateDSAArrayExamples();
         // simulateMementoExample();
         // simulateMementoExampleFromAI();
-        simulateAdapterDemoExample();
+        // simulateAdapterDemoExample();
+        simulateDecoratorPatternExample();
     }
 
     public static void simulateBasicArrayExamples() {
@@ -85,5 +89,49 @@ public class Main {
         player.play("mp3", "song.mp3");  // Direct play without adapter
         player.play("mp4", "movie.mp4"); // Uses MP4 adapter
         player.play("vlc", "video.vlc"); // Uses VLC adapter
+    }
+
+    private static void simulateMyBasicThread() {
+        MyBasicThread firstThread = new MyBasicThread("firstThread");
+        MyBasicThread secondThread = new MyBasicThread("secondThread");
+        MyBasicThread thirdThread = new MyBasicThread("thirdThread");
+        firstThread.start();
+        secondThread.start();
+        thirdThread.start();
+    }
+
+    private static void simulateTestCounterWithThread() {
+        TestCounter testCounter = new TestCounter();
+        Runnable incrementCounterTask = testCounter::increment;
+        Runnable readCounterTask = testCounter::getCounter;
+
+        Thread firstIncrementCounterThread = new Thread(incrementCounterTask, "firstIncrementCounterThread");
+        Thread secondIncrementCounterThread = new Thread(incrementCounterTask,"secondIncrementCounterThread");
+        Thread thirdIncrementCounterThread = new Thread(incrementCounterTask,"thirdIncrementCounterThread");
+
+        Thread firstReadCounterThread = new Thread(readCounterTask, "firstReadCounterThread");
+        Thread secondReadCounterThread = new Thread(readCounterTask,"secondReadCounterThread");
+        Thread thirdReadCounterThread = new Thread(readCounterTask,"thirdReadCounterThread");
+
+        firstIncrementCounterThread.start();
+        secondIncrementCounterThread.start();
+        thirdIncrementCounterThread.start();
+        try {
+            firstIncrementCounterThread.join();
+            secondIncrementCounterThread.join();
+            thirdIncrementCounterThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        firstReadCounterThread.start();
+        secondReadCounterThread.start();
+        thirdReadCounterThread.start();
+    }
+
+    private static void simulateDecoratorPatternExample() {
+        DecoratorFarmHousePizza farmHousePizza = new DecoratorFarmHousePizza();
+        System.out.println("FarmHouse Pizza Cost before updating : " + Utility.printDoubleAmountWithRupeeSymbol(farmHousePizza.getPizzaCost()));
+        farmHousePizza.updateCost(30);
+        System.out.println("FarmHouse Pizza Cost after updating : " + Utility.printDoubleAmountWithRupeeSymbol(farmHousePizza.getPizzaCost()));
     }
 }
